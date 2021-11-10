@@ -10,7 +10,14 @@ import SingleBlogPage from './pages/single-blog/SingleBlogPage';
 import AuthContext from './store/AuthContext';
 
 function App() {
-  const authCtx = { user: 'James bond' };
+  const login = () => {
+    console.log('login on App js');
+  };
+
+  const authCtx = {
+    user: 'Mike Tyson',
+    login: login,
+  };
 
   return (
     <AuthContext.Provider value={authCtx}>
