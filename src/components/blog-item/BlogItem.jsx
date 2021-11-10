@@ -1,3 +1,4 @@
+import css from './BlogItem.module.css';
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import AuthContext from '../../store/AuthContext';
@@ -20,10 +21,11 @@ function BlogItem({ item }) {
   };
 
   return (
-    <article>
-      <h3>{item.title}</h3>
-      <Link to={`${item.url}/${item.id}`}>Read more</Link>
-      <h3>Current user: {authCtx.user}</h3>
+    <article className={css['blog-item']}>
+      <img src={item.imgUrl} alt={item.title} />
+      <h3 className='title'>{item.title.slice(0, 30) + '...'}</h3>
+      <p>{item.text.slice(0, 50) + ' ...'}</p>
+      <a href={item.url}>Read more</a> <br />
       <input
         value={newUsername}
         onChange={(e) => setNewUsername(e.target.value)}

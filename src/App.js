@@ -9,6 +9,7 @@ import Header from './components/header/Header';
 import SingleBlogPage from './pages/single-blog/SingleBlogPage';
 import AuthContext from './store/AuthContext';
 import { useState } from 'react';
+import MainFooter from './components/footer/MainFooter';
 
 function App() {
   const [username, setUsername] = useState('Mike Tyson');
@@ -46,6 +47,7 @@ function App() {
             <h2>Opps page not found 404 </h2>
           </Route>
         </Switch>
+        <MainFooter />
       </div>
     </AuthContext.Provider>
   );
