@@ -1,11 +1,12 @@
 import css from './BlogItem.module.css';
 import { Link } from 'react-router-dom';
-import { useContext, useState } from 'react';
-import AuthContext from '../../store/AuthContext';
+import { useState } from 'react';
+
 import Button from '../ui/button/Button';
+import { useAuthCtx } from '../../store/AuthContext';
 
 function BlogItem({ item }) {
-  const authCtx = useContext(AuthContext);
+  const authCtx = useAuthCtx();
 
   const [newUsername, setNewUsername] = useState('');
 

@@ -7,24 +7,13 @@ import ContactPage from './pages/contact/ContactPage';
 import HomePage from './pages/home/HomePage';
 import Header from './components/header/Header';
 import SingleBlogPage from './pages/single-blog/SingleBlogPage';
-import AuthContext from './store/AuthContext';
-import { useState } from 'react';
+import AuthProvider from './store/AuthContext';
+
 import MainFooter from './components/footer/MainFooter';
 
 function App() {
-  const [username, setUsername] = useState('Mike Tyson');
-  const login = (newUsername) => {
-    console.log('login on App js');
-    setUsername(newUsername);
-  };
-
-  const authCtx = {
-    user: username,
-    login: login,
-  };
-
   return (
-    <AuthContext.Provider value={authCtx}>
+    <AuthProvider>
       <div className='App'>
         <Header />
         <Switch>
@@ -49,7 +38,7 @@ function App() {
         </Switch>
         <MainFooter />
       </div>
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 }
 

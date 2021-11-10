@@ -1,9 +1,10 @@
-import { useState, useContext } from 'react';
-import AuthContext from '../../store/AuthContext';
+import { useState } from 'react';
+import { useAuthCtx } from '../../store/AuthContext';
 
 function Login() {
   const [userName, setUserName] = useState('');
-  const authCtx = useContext(AuthContext);
+  // const authCtx = useContext(AuthContext);
+  const authCtx = useAuthCtx();
 
   const handleSubmit = (event) => {
     event.preventDefault();
