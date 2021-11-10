@@ -68,7 +68,7 @@ Iš esmės, sukuriamos didžiosios fermionų masės, kurios pasireiškia vadinam
 ];
 
 function BlogsSection() {
-  console.log(JSON.stringify(blogDataArr));
+  // console.log(JSON.stringify(blogDataArr));
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
