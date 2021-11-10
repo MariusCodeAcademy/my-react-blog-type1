@@ -7,32 +7,37 @@ import ContactPage from './pages/contact/ContactPage';
 import HomePage from './pages/home/HomePage';
 import Header from './components/header/Header';
 import SingleBlogPage from './pages/single-blog/SingleBlogPage';
+import AuthContext from './store/AuthContext';
 
 function App() {
+  const authCtx = { user: 'James bond' };
+
   return (
-    <div className='App'>
-      <Header />
-      <Switch>
-        <Route path='/blog/:blogId'>
-          <SingleBlogPage />
-        </Route>
-        <Route path='/blog'>
-          <BlogPage />
-        </Route>
-        <Route path='/about'>
-          <AboutPage />
-        </Route>
-        <Route path='/contact'>
-          <ContactPage />
-        </Route>
-        <Route exact path='/'>
-          <HomePage />
-        </Route>
-        <Route path='*'>
-          <h2>Opps page not found 404 </h2>
-        </Route>
-      </Switch>
-    </div>
+    <AuthContext.Provider value={authCtx}>
+      <div className='App'>
+        <Header />
+        <Switch>
+          <Route path='/blog/:blogId'>
+            <SingleBlogPage />
+          </Route>
+          <Route path='/blog'>
+            <BlogPage />
+          </Route>
+          <Route path='/about'>
+            <AboutPage />
+          </Route>
+          <Route path='/contact'>
+            <ContactPage />
+          </Route>
+          <Route exact path='/'>
+            <HomePage />
+          </Route>
+          <Route path='*'>
+            <h2>Opps page not found 404 </h2>
+          </Route>
+        </Switch>
+      </div>
+    </AuthContext.Provider>
   );
 }
 
