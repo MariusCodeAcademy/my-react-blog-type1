@@ -14,5 +14,10 @@
 ## uzd
 
 1. Get current user in BlogItem
-2. Create login component form or input with buton
-3.
+2. Create Footer component
+3. Add footer to all pages
+4. Create login component form or input with buton
+5. Add login Component to footer
+6. login new user from footer, see changes everywhere
+7. Add login component to About us page, make sure it works
+8. create Logout function and add it to header when user is loggedin
